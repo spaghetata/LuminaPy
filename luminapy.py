@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#! /usr/bin/env python3
 
                 ####################
 #################   Informations   #################
@@ -14,6 +14,7 @@ Discription = "This is a small script for error handling"
                 ####################
 
 from datetime import datetime
+from ANSI import *
 
                 ####################
 ################# Global variables #################
@@ -26,10 +27,10 @@ timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 ####################
 
 def info(text):
-    print(f"\033[48;5;34m[INFO]\033[0m {timestamp} - {text}") # green bg
+    print(f"{BG.GREEN}{UTIL.BOLD}[INFO]{UTIL.RESET} {timestamp} - {text}") # green bg
 
 def warning(text):
-    print(f"\033[43m[WARNING]\033[0m {timestamp} - {text}") # yellow bg
+    print(f"{BG.YELLOW}{UTIL.BOLD}[WARNING]{UTIL.RESET} {timestamp} - {text}") # yellow bg
 
 def fail(text):
-    print(f"\033[41m[FAIL]\033[0m {timestamp} - {text}") # red bg
+    print(f"{BG.RED}{UTIL.BOLD}[FAIL]{UTIL.RESET} {timestamp} - {text}") # red bg
