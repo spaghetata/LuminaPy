@@ -4,7 +4,7 @@
 #################   Informations   #################
                 ####################
 
-Version     = "1.2"
+Version     = "1.3"
 Credits     = "spaghetata"
 License     = "GPL3.0"
 Discription = "This is a small script for error handling"
@@ -14,7 +14,12 @@ Discription = "This is a small script for error handling"
                 ####################
 
 from datetime import datetime
-from ANSI import *
+
+try:
+    from ANSI import *
+except:
+    print("ERROR: Missing Library: ANSI")
+    exit(1)
 
                 ####################
 ################# Global variables #################
