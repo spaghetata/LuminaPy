@@ -4,7 +4,7 @@
 #################   Informations   #################
                 ####################
 
-Version     = "1.3"
+Version     = "1.3.1"
 Credits     = "spaghetata"
 License     = "GPL3.0"
 Discription = "This is a small script for error handling"
@@ -35,6 +35,6 @@ def info(text):
 def warn(text):
     print(f"\n{BG.YELLOW}{UTIL.BOLD}[WARN]{UTIL.RESET} {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {text}") # yellow bg
 
-def fail(text):
-    print(f"\n{BG.RED}{UTIL.BOLD}[FAIL]{UTIL.RESET} {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {text}") # red bg
-    exit(1)
+def fail(text, exitcode):
+    print(f"\n{BG.RED}{UTIL.BOLD}[FAIL]{UTIL.RESET} {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {FG.RED}[{exitcode}]{UTIL.RESET} {text}") # red bg
+    exit(exitcode)
